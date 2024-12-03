@@ -1,0 +1,21 @@
+1.Reference to some useful methods of the ArrayList class 
+Có các phương thức tiện lợi ví dụ:
+add(E element): Thêm một phần tử vào cuối danh sách.
+get(int index): Lấy phần tử tại vị trí chỉ định.
+remove(int index): Xóa phần tử tại vị trí chỉ định.
+remove(Object o): Xóa phần tử đầu tiên có giá trị bằng đối tượng được chỉ định.
+size(): Trả về số lượng phần tử trong danh sách.
+isEmpty(): Kiểm tra danh sách có rỗng không.
+contains(Object o): Kiểm tra xem danh sách có chứa phần tử được chỉ định không.
+sort(Comparator ): Sắp xếp danh sách theo thứ tự do Comparator chỉ định.
+2.- Which classes are aggregates of other classes? Checking all constructors of whole classes if they initialize for their parts? 
+Các lớp như Cart,Store (tập hợp các đối tượng Media) và CompactDisc (tập hợp các đối tượng Track) là các lớp chứa các đối tượng của các lớp khác.
+3. Lớp nào nên implement giao diện Comparable?
+Lớp nên implement Comparable là những lớp có thể cần so sánh đối tượng của chúng, như Media, CompactDisc, DigitalVideoDisc hoặc Track. Cụ thể, khi bạn muốn so sánh các đối tượng theo một thuộc tính như title hoặc cost, bạn sẽ implement Comparable và ghi đè phương thức compareTo().
+4. Phương thức compareTo() nên được triển khai như thế nào để phản ánh thứ tự sắp xếp mong muốn?
+Phương thức compareTo() nên được triển khai để so sánh các đối tượng theo thứ tự mong muốn, thường dựa trên một thuộc tính cụ thể của lớp. Cách triển khai phụ thuộc vào yêu cầu sắp xếp.
+Ví dụ:
+Để sắp xếp theo title (tên) theo thứ tự chữ cái tăng dần, bạn có thể so sánh trực tiếp giữa các title.
+Nếu có nhiều tiêu chí sắp xếp (ví dụ, sắp xếp theo title, nếu title giống nhau thì so sánh theo cost), bạn có thể sử dụng phương thức thenComparing().
+5.Có thể có hai quy tắc sắp xếp cho các phần tử (theo title rồi cost, hoặc theo cost rồi title) nếu sử dụng giao diện Comparable không?
+Không, giao diện Comparable chỉ cho phép một quy tắc sắp xếp duy nhất. Tuy nhiên, để thực hiện hai quy tắc sắp xếp (theo title rồi cost hoặc theo cost rồi title), ta có thể sử dụng Comparator, vì nó cho phép định nghĩa nhiều quy tắc sắp xếp khác nhau.
